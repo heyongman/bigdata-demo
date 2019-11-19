@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.he.modules.dao.MovieDao">
+    <!--查询所有-->
+    <select id="queryMovieBo" resultMap="MovieBoMap">
+        SELECT * FROM movie_bo ORDER BY bo DESC
+    </select>
+    <select id="queryRegionBo" resultMap="MovieBoMap">
+        SELECT * FROM region_bo ORDER BY bo DESC
+    </select>
+
+    <!--分类结果集-->
+    <resultMap type="movie" id="MovieBoMap">
+        <id property="id" column="id"/>
+    </resultMap>
+
+</mapper>

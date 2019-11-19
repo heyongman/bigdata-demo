@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/aop
+    	http://www.springframework.org/schema/aop/spring-aop.xsd
+    	http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+	    http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--开启注解扫描-->
+    <context:annotation-config/>
+    <!-- 自动扫描dao和service包(自动注入) -->
+    <context:component-scan base-package="com.he.modules">
+        <!-- 因为在spring-mybatis的配置文件中设置了扫描service，所以此处不用再扫描service，不然重复扫描会导致事务失效 -->
+        <!--<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/>-->
+    </context:component-scan>
+    <!--不通过服务直接访问页面-->
+    <mvc:view-controller path="/main" view-name="main"/>
+    <!--<mvc:view-controller path="/home" view-name="home"/>-->
+    <!-- mvc的注解 -->
+    <mvc:annotation-driven/>
+    <!-- 启动Spring MVC的注解功能，完成请求和注解实体的映射 -->
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter"/>
+    <!-- 配置视图 -->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 前缀 -->
+        <property name="prefix" value="/WEB-INF/html/"/>
+        <!-- 后缀 -->
+        <property name="suffix" value=".html"/>
+    </bean>
+    <!--静态资源访问配置-->
+    <mvc:resources mapping="/resources/**" location="/resources/"/>
+</beans>

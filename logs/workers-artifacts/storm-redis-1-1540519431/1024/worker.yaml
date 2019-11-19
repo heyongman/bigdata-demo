@@ -1,0 +1,4 @@
+worker-id: d4dea2f6-a13b-43d7-933d-0bacefed143a
+logs.users: []
+logs.groups: []
+topology.submitter.user: mac

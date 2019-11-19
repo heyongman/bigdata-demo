@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>交易信息展示</title>
+    <link rel="stylesheet" href="resources/bootstrap-3.3.7-dist/css/bootstrap.css">
+    <link rel="stylesheet" href="resources/bootstrap-table-develop/dist/bootstrap-table.css">
+    <link rel="stylesheet" href="resources/css/bank_main.css">
+    <script src="resources/js/jquery-1.12.4.min.js"></script>
+    <script src="resources/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="resources/bootstrap-table-develop/dist/bootstrap-table.js"></script>
+    <script src="resources/bootstrap-table-develop/dist/locale/bootstrap-table-zh-CN.js"></script>
+    <script src="resources/bootstrap-table-develop/dist/extensions/export/bootstrap-table-export.js"></script>
+    <script src="resources/tableExport.jquery.plugin-master/tableExport.js"></script>
+    <script src="resources/bootstrap-table-examples-master/bootstrap-editable.js"></script>
+    <script src="resources/bootstrap-table-develop/src/extensions/editable/bootstrap-table-editable.js"></script>
+    <script src="resources/js/bank_main.js"></script>
+    <!--<script src="resources/bootstrap-table-examples-master/assets/jquery.min.js"></script>-->
+    <!--<script src="resources/bootstrap-table-examples-master/assets/bootstrap/js/bootstrap.min.js"></script>-->
+    <!--<script src="resources/bootstrap-table-examples-master/assets/bootstrap-table/src/bootstrap-table.js"></script>-->
+    <!--<script src="../../resources/bootstrap-table-examples-master/assets/bootstrap-table/src/extensions/export/bootstrap-table-export.js"></script>-->
+    <!--<script src="resources/bootstrap-table-examples-master/assets/tableExport.jquery.plugin-master/tableExport.js"></script>-->
+</head>
+<body>
+    <!--<div class="content">-->
+        <!--左侧栏目-->
+        <div class="content_left">
+            <ul>
+                <li><a href="javascript:void(0)" onclick="show('.container')">三日内最高客户</a></li>
+                <li><a href="javascript:void(0)" onclick="show('.container1')">消费前十客户</a></li>
+                <li><a href="javascript:void(0)" onclick="show('.container2')">错误信息客户</a></li>
+            </ul>
+        </div>
+        <!-- iframe -->
+        <!--<div class="iframe">-->
+        <!--<iframe name="showMessage"></iframe>-->
+        <!--</div>-->
+    <!--</div>-->
+<div class="container">
+    <h1>三日内最高客户</h1>
+    <table id="table"
+           data-show-export="true"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-columns="true"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-show-footer="false">
+    </table>
+</div>
+<div class="container1">
+    <h1>消费前十客户</h1>
+    <table id="table1"
+           data-show-export="true"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-columns="true"
+           data-detail-view="true"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-show-footer="false">
+    </table>
+</div>
+<div class="container2">
+    <h1>错误信息客户</h1>
+    <table id="table2"
+           data-show-export="true"
+           data-search="true"
+           data-show-refresh="true"
+           data-show-columns="true"
+           data-detail-view="true"
+           data-minimum-count-columns="2"
+           data-show-pagination-switch="true"
+           data-pagination="true"
+           data-show-footer="false">
+    </table>
+</div>
+</body>
+</html>

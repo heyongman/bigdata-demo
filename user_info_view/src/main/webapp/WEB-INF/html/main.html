@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript" src="resources/js/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="resources/js/echarts.min.4.js"></script>
+    <script type="text/javascript" src="resources/js/china.js"></script>
+    <script type="text/javascript" src="resources/js/main.js"></script>
+    <script type="text/javascript">
+        function loadWin() {
+            //3秒自动刷新一次,3秒取得一次数据.
+            setInterval("window.location.reload()",3000);
+        }
+    </script>
+</head>
+<body onload="loadWin()">
+<!-- 为ECharts准备一个具备大小（宽高）的Dom -->
+<div id="main" style="width: 1000px;height:600px;"></div>
+<p></p><p></p>
+<div id="main1" style="width: 1000px;height:600px;"></div>
+</body>
+</html>
