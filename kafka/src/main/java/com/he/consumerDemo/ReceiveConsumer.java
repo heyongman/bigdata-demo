@@ -16,10 +16,11 @@ public class ReceiveConsumer {
 //        创建consumer对象
         KafkaConsumer<String, String> consumer = new KafkaConsumer<>(props);
 //        根据主题订阅
-//        consumer.subscribe(Arrays.asList("mytopic"));
+        consumer.subscribe(Arrays.asList("hiktest"));
 //        根据分区订阅
-        TopicPartition p0 = new TopicPartition("mytopic",1);
-        consumer.assign(Arrays.asList(p0));
+//        TopicPartition p0 = new TopicPartition("tocc_bus",1);
+//        consumer.assign(Arrays.asList(p0));
+        System.out.println("start");
         while (true){
 //            每隔100ms消费一次
             ConsumerRecords<String, String> records = consumer.poll(100);
@@ -27,7 +28,7 @@ public class ReceiveConsumer {
                 System.out.println(record.value());
             }
 //            手动同步 offset
-            consumer.commitSync();
+//            consumer.commitSync();
         }
     }
 

@@ -16,7 +16,7 @@ public class ProducerSend {
 //        发送
         for (int i = 0; i < 10; i++) {
 //            指定key的进入同一分区
-            producer.send(new ProducerRecord<String, String>("mytopic","111","hello"+i));
+            producer.send(new ProducerRecord<String, String>("hiktest","111","hello"+i));
         }
         producer.close();
 
