@@ -15,7 +15,7 @@
         <!--spring版本控制-->
         <spring-version>4.3.13.RELEASE</spring-version>
         <!--mybatis版本控制-->
-        <mybatis-version>3.4.2</mybatis-version>
+        <mybatis-version>3.5.6</mybatis-version>
     </properties>
     <dependencies>
         <dependency>
